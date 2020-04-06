@@ -5,53 +5,59 @@
 #include "sysfont.h"
 
 // LED
-#define LED_PIO          PIOC
-#define LED_PIO_ID       ID_PIOC
-#define LED_IDX          8
-#define LED_IDX_MASK     (1 << LED_IDX)
+#define LED_PIO       PIOC
+#define LED_PIO_ID    ID_PIOC
+#define LED_IDX       8
+#define LED_IDX_MASK  (1 << LED_IDX)
 
 // Bot�o
-#define BUT_PIO          PIOA
-#define BUT_PIO_ID       ID_PIOA
-#define BUT_IDX          11
-#define BUT_IDX_MASK     (1 << BUT_IDX)
+#define BUT_PIO       PIOA
+#define BUT_PIO_ID    ID_PIOA
+#define BUT_IDX       11
+#define BUT_IDX_MASK  (1 << BUT_IDX)
+
+// Bot�o 1
+#define BUT1_PIO            PIOD
+#define BUT1_PIO_ID         16
+#define BUT1_IDX        28
+#define BUT1_IDX_MASK   (1u << BUT1_PIO_IDX)
 
 // =====================  BUT  =============================
 
-#define BUT1_PIO         PIOD
-#define BUT1_PIO_ID      16
+#define BUT1_PIO             PIOD
+#define BUT1_PIO_ID          16
 #define BUT1_IDX         28
 #define BUT1_IDX_MASK    (1u << BUT1_IDX)
 
-#define BUT3_PIO         PIOA
-#define BUT3_PIO_ID      10
+#define BUT3_PIO             PIOA
+#define BUT3_PIO_ID          10
 #define BUT3_IDX         19
 #define BUT3_IDX_MASK    (1u << BUT3_IDX)
 
-#define BUT2_PIO         PIOC   
-#define BUT2_PIO_ID      12
+#define BUT2_PIO             PIOC
+#define BUT2_PIO_ID          12
 #define BUT2_IDX         31
 #define BUT2_IDX_MASK    (1u << BUT2_IDX)
 
 // =====================  LED  =============================
 
 // LED1 oled
-#define LED1_PIO         PIOA
-#define LED1_PIO_ID      ID_PIOA
-#define LED1_IDX         0
-#define LED1_IDX_MASK    (1 << LED1_IDX)
+#define LED1_PIO      PIOA
+#define LED1_PIO_ID   ID_PIOA
+#define LED1_IDX      0
+#define LED1_IDX_MASK (1 << LED1_IDX)
 
 // LED2 oled
-#define LED2_PIO         PIOC
-#define LED2_PIO_ID      ID_PIOC
-#define LED2_IDX         30
-#define LED2_IDX_MASK    (1 << LED2_IDX)
+#define LED2_PIO      PIOC
+#define LED2_PIO_ID   ID_PIOC
+#define LED2_IDX      30
+#define LED2_IDX_MASK (1 << LED2_IDX)
 
 // LED3 oled
-#define LED3_PIO         PIOB
-#define LED3_PIO_ID      ID_PIOB
-#define LED3_IDX         2
-#define LED3_IDX_MASK    (1 << LED3_IDX)
+#define LED3_PIO      PIOB
+#define LED3_PIO_ID   ID_PIOB
+#define LED3_IDX      2
+#define LED3_IDX_MASK (1 << LED3_IDX)
 
 //=================================================== FLAGs ===============================================================
 
@@ -252,8 +258,8 @@ int main (void)
 	gfx_mono_ssd1306_init();
   
   // Escreve na tela um circulo e um texto
-	gfx_mono_draw_filled_circle(20, 16, 16, GFX_PIXEL_SET, GFX_WHOLE);
-  gfx_mono_draw_string("mundo", 50,16, &sysfont);
+  //gfx_mono_draw_filled_circle(20, 16, 16, GFX_PIXEL_SET, GFX_WHOLE);
+  gfx_mono_draw_string("5Hz 10Hz 1Hz", 5,10, &sysfont);
 
   /* Insert application code here, after the board has been initialized. */
 	while(1) {
